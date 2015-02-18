@@ -1,0 +1,15 @@
+{
+    "name": "Git tools",
+    "uri": "gh:zedapp/git-tools",
+    "version": "1.0",
+    "description": "A useful new package",
+    "files": [
+        "grep.js",
+        "grep_open.js",
+        "add.js",
+        "commit.js",
+        "cancel_commit.js",
+        "finalize_commit.js",
+        "diff.js"
+    ]
+}

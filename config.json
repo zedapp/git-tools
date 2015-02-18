@@ -1,0 +1,77 @@
+{
+    commands: {
+        "Git:Grep": {
+            scriptUrl: "./grep.js",
+            requiredCapabilities: {
+                run: true
+            },
+            readOnly: true
+        },
+        "Git:Add": {
+            scriptUrl: "./add.js",
+            requiredCapabilities: {
+                run: true
+            }
+        },
+        "Git:Commit": {
+            scriptUrl: "./commit.js",
+            requiredCapabilities: {
+                run: true
+            }
+        },
+        "Git:Diff": {
+            scriptUrl: "./diff.js",
+            requiredCapabilities: {
+                run: true
+            }
+        },
+        "Version Control:Finalize Commit": {
+            scriptUrl: "./finalize_commit.js",
+            requiredCapabilities: {
+                run: true
+            },
+            inputs: {
+                text: true
+            },
+            internal: true
+        },
+        "Version Control:Cancel Commit": {
+            scriptUrl: "./cancel_commit.js",
+            requiredCapabilities: {
+                run: true
+            },
+            internal: true
+        }
+    },
+    modes: {
+        "git-search-results": {
+            name: "Git Grep Results",
+            highlighter: "ace/mode/markdown",
+            filenames: ["zed::git::grep"],
+
+            keys: {
+                "Git:Grep:Open File": "Enter"
+            },
+
+            commands: {
+                "Git:Grep:Open File": {
+                    scriptUrl: "./grep_open.js",
+                    inputs: {
+                        lines: true,
+                        cursor: true
+                    },
+                    internal: true
+                }
+            },
+
+            preferences: {
+                showGutter: false,
+                showPrintMargin: false
+            },
+
+            handlers: {
+                click: ["Git:Grep:Open File"]
+            }
+        }
+    }
+}
