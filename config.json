@@ -25,6 +25,18 @@
                 run: true
             }
         },
+        "Git:Status": {
+            scriptUrl: "./status.js",
+            requiredCapabilities: {
+                run: true
+            }
+        },
+        "Git:Blame": {
+            scriptUrl: "./blame.js",
+            requiredCapabilities: {
+                run: true
+            }
+        },
         "Version Control:Finalize Commit": {
             scriptUrl: "./finalize_commit.js",
             requiredCapabilities: {

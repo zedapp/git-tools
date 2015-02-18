@@ -7,3 +7,5 @@ This uses the new ability to run external commands from Zed. Commands introduced
 * `Git:Add`
 * `Git:Commit`
 * `Git:Diff`
+* `Git:Status`
+* `Git:Blamek`

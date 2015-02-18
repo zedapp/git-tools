@@ -10,6 +10,8 @@
         "commit.js",
         "cancel_commit.js",
         "finalize_commit.js",
-        "diff.js"
+        "diff.js",
+        "status.js",
+        "blame.js"
     ]
 }
