@@ -37,7 +37,7 @@
                 run: true
             }
         },
-        "Version Control:Finalize Commit": {
+        "Git:Finalize Commit": {
             scriptUrl: "./finalize_commit.js",
             requiredCapabilities: {
                 run: true
@@ -47,7 +47,7 @@
             },
             internal: true
         },
-        "Version Control:Cancel Commit": {
+        "Git:Cancel Commit": {
             scriptUrl: "./cancel_commit.js",
             requiredCapabilities: {
                 run: true
@@ -83,6 +83,21 @@
 
             handlers: {
                 click: ["Git:Grep:Open File"]
+            }
+        },
+        gitcommit: {
+            name: "Git Commit",
+            extensions: ["gitcommit"],
+            highlighter: "mode/commit",
+
+            preferences: {
+                showGutter: false,
+                wordWrap: true
+            },
+
+            keys: {
+                "Git:Finalize Commit": "Ctrl-Shift-C",
+                "Git:Cancel Commit": "Esc"
             }
         }
     }

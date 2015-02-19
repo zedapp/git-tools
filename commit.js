@@ -6,13 +6,13 @@ module.exports = function(info) {
     return fs.run(["git", "commit", "--dry-run"]).then(function(dryRun_) {
         dryRun = dryRun_.trim();
 
-        return session.goto("zed::vc::commit.commit|write");
+        return session.goto("zed::vc::message.gitcommit|write");
     }).then(function() {
         var text = "\n# Please enter the commit message for your changes above.\n";
         text += "# Lines starting with '#' will be ignored.\n#\n";
         text += "# Press Ctrl-Shift-C to finalize the commit or Esc to cancel.\n";
         text += "#\n";
         text += "# " + dryRun.replace(/\n/g, "\n# ");
-        return session.setText("zed::vc::commit.commit", text);
+        return session.setText("zed::vc::message.gitcommit", text);
     });
 };

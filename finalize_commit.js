@@ -15,7 +15,7 @@ module.exports = function(info) {
     var output;
     return fs.run(["git", "commit", "-m", commitMessage]).then(function(output_) {
         output = output_;
-        session.deleteSession("zed::vc::commit.commit");
+        session.deleteSession("zed::vc::message.gitcommit");
         return session.goto("zed::output");
     }).then(function() {
         return session.setText("zed::output", output);
